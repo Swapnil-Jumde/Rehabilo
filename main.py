@@ -45,7 +45,7 @@ def index():
 @app.route('/contact', methods=['POST','GET'])
 def book_appointment():
     contact_form = ContactForm()
-
+    msg2 = True
     if request.method == 'POST':
         #getting data from contact form
         name = request.form['name'].title()
@@ -73,8 +73,8 @@ def book_appointment():
         )
         db.session.add(new_appointment)
         db.session.commit()
+        return render_template("notify.html")
 
-        return redirect(url_for("index"))
     return render_template("contact.html", form=contact_form)
 
 
@@ -116,8 +116,6 @@ def delete():
     all_data = db.session.query(Appointment).all()
     show = False
     return render_template("appointments.html", data=all_data, show=show,)
-
-
 
 
 @app.route('/search', methods=['GET', 'POST'])
