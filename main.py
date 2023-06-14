@@ -37,7 +37,6 @@ with app.app_context():
     db.create_all()
 
 
-
 @app.route('/', methods=['POST', 'GET'])
 def index():
     return render_template("index.html")
@@ -45,7 +44,7 @@ def index():
 @app.route('/contact', methods=['POST','GET'])
 def book_appointment():
     contact_form = ContactForm()
-    msg2 = True
+
     if request.method == 'POST':
         #getting data from contact form
         name = request.form['name'].title()
