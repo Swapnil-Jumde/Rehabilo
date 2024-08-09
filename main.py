@@ -6,8 +6,8 @@ import smtplib
 from flask_sqlalchemy import SQLAlchemy
 from werkzeug.security import generate_password_hash, check_password_hash
 
-my_mail = 'kashipawar1806@gmail.com'
-password = "zzkpnekqpnzvdnic"
+my_mail = 'your@gmail.com'
+password = "zzkpnekqpnzvdnicpswad"
 
 #contact from data
 class ContactForm(FlaskForm):
